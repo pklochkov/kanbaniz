@@ -15,6 +15,8 @@ Implemented:
 In Progress:
  - Unit Tests
  - Documentation
+ - Handle record types and picklists
+ - Configurable filters
  - Error handling
  - Loading spinners
  - Group records by lookup field
