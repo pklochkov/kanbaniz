@@ -1,0 +1,12 @@
+/**
+ * Created by pavel on 02.04.2017.
+ */
+.THIS {
+}
+
+.THIS.column{
+    width:150px;
+    border-left:solid 1px lightblue;
+    padding-left:0.2rem;
+    padding-right:0.2rem;
+}

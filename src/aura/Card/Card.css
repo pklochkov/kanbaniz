@@ -1,0 +1,24 @@
+/**
+ * Created by pavel on 02.04.2017.
+ */
+.THIS {
+}
+
+.THIS .slds-form-element{
+    width:100%;
+}
+
+.THIS .slds-media__figure{
+    width:100%;
+}
+
+.THIS.slds-card{
+    cursor:pointer;
+}
+.THIS.slds-card .lowpadded{
+    padding:0.2rem;
+}
+
+.THIS.slds-card .slds-card__header.slds-grid.lowpadded{
+    margin-bottom:0.4rem;
+}

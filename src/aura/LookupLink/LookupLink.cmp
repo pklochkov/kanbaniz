@@ -1,0 +1,8 @@
+<!--
+ - Created by pavel on 15.04.2017.
+ -->
+
+<aura:component description="LookupLink" access="public">
+    <aura:attribute access="public" name="value" type="Object"/>
+    <a href="javascript:void(0)" onclick="{!c.showRelatedRecord}"><aura:text value="{!v.value.displayValue}"/></a>
+</aura:component>

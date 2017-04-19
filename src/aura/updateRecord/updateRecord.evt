@@ -1,0 +1,7 @@
+<!--
+ - Created by pavel on 16.04.2017.
+ -->
+
+<aura:event type="COMPONENT" description="updateRecord">
+    <aura:attribute name="recordId" type="String" required="true"/>
+</aura:event>

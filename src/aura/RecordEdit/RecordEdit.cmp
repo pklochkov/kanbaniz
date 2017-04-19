@@ -1,0 +1,14 @@
+<!--
+ - Created by pavel on 18.04.2017.
+ -->
+
+<aura:component description="RecordEdit">
+    <!--<aura:dependency type="COMPONENT" resource="markup://force:recordEdit"/>-->
+    <!--<aura:dependency type="EVENT" resource="markup://force:recordSave"/>-->
+    <aura:attribute type="String" name="recordId" access="public"/>
+    <aura:method name="saveRecord" access="public" action="c.saveRecord"/>
+    <aura:registerEvent type="force:recordSave" name="e.recordSave"/>
+
+    <force:recordEdit aura:id="editorOfRecord" recordId="{!v.recordId}"/>
+
+</aura:component>

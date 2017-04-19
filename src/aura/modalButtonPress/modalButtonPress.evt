@@ -1,0 +1,9 @@
+<!--
+ - Created by pavel on 17.04.2017.
+ -->
+
+<aura:event type="COMPONENT" description="modalButtonPress">
+    <aura:attribute name="action" type="String" required="true"/>
+    <aura:attribute name="modalId" type="String"/>
+    <!--<aura:attribute name="payload" type="Object"/>-->
+</aura:event>

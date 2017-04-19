@@ -1,0 +1,45 @@
+<!--
+ - Created by pavel on 02.04.2017.
+ -->
+
+<aura:component description="Board"
+                implements="force:hasRecordId, force:lightningQuickActionWithoutHeader, force:appHostable, flexipage:availableForAllPageTypes"
+                access="global" controller="BoardController">
+    <aura:attribute type="String" name="relationField" description="Filter field" access="global"/>
+    <aura:attribute type="String" name="sObjectName" description="Related object to show in Kanban" access="global"/>
+    <aura:attribute type="String" name="columnField" description="Field to use as columns" access="global"/>
+    <aura:attribute type="String" name="groupingField" description="Related object to show in Kanban" access="global"/>
+    <aura:attribute type="String[]" name="columnNames" description="Fields to display on a card" access="global"/>
+    <aura:attribute type="String" name="cardFields" description="Fields to display on a card" access="global"/>
+
+    <aura:attribute type="Object" name="model" description="All objects on Kanban by generated id"/>
+    <aura:attribute type="String" name="editRecordId"/>
+
+    <aura:attribute type="Object[]" name="columns"/>
+    <aura:attribute type="Boolean" name="recordEditModal"/>
+    <!--<aura:attribute type="Component" name="recordEditCmp"/>-->
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:handler name="boardCardDropped" action="{!c.onBoardCardDropped}" event="c:boardCardDropped"
+                  includeFacets="true"/>
+
+    <aura:handler name="onCardEdit" action="{!c.onCardEdit}" event="c:boardCardEdit"
+                  includeFacets="true"/>
+    <aura:handler name="onSaveSuccess" action="{!c.doInit}" event="force:recordSaveSuccess" includeFacets="true"/>
+    <aura:handler name="modalButtonPress" action="{!c.onRecordUpdate}" event="c:modalButtonPress" includeFacets="true"/>
+
+
+    <h1>Card board</h1>
+    <c:Modal title="update card"
+             cancelTitle="Cancel"
+             showModal="{!v.recordEditModal}"
+             okTitle="Save">
+        <c:DynamicRecordEdit aura:id="editRecord"/>
+    </c:Modal>
+    <div class="slds-grid board">
+        <aura:iteration items="{!v.columns}" var="item">
+            <c:Column column="{!item}"/>
+        </aura:iteration>
+    </div>
+</aura:component>

@@ -1,0 +1,9 @@
+/**
+ * Created by pavel on 16.04.2017.
+ */
+.THIS{}
+.THIS .slds-modal__container{
+    margin-top: 7%;
+    width: 70%;
+    height: 90%;
+}

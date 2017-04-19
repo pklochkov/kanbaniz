@@ -1,0 +1,18 @@
+<!--
+ - Created by pavel on 02.04.2017.
+ -->
+
+<aura:component description="Column">
+    <aura:attribute access="global" type="Object" name="column" description="Item card"/>
+    <aura:registerEvent name="boardCardDropped" type="c:boardCardDropped"/>
+
+    <div class="slds-col column"
+         ondragover="{!c.onDragOver}"
+         ondragenter="{!c.onDragEnter}"
+         ondrop="{!c.onDrop}">
+        <h1>{!v.column.name}</h1>
+        <aura:iteration items="{!v.column.cards}" var="card">
+            <c:Card model="{!card}"/>
+        </aura:iteration>
+    </div>
+</aura:component>

@@ -1,0 +1,8 @@
+<!--
+ - Created by pavel on 02.04.2017.
+ -->
+
+<aura:event type="COMPONENT" description="boardCardDropped">
+    <aura:attribute name="modelid" type="String" required="true"/>
+    <aura:attribute name="column" type="String" required="true"/>
+</aura:event>

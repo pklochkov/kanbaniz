@@ -1,0 +1,44 @@
+<!--
+ - Created by pavel on 16.04.2017.
+ -->
+
+<aura:component description="Modal">
+    <aura:attribute type="String" name="modalId" access="public" description="Id of the component"/>
+    <aura:attribute type="Boolean" name="showModal" access="public"
+                    description="Title of the cancel button on component"/>
+    <aura:attribute type="String" name="title" access="public" description="Title of the component"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute type="String" name="okTitle" access="public" description="Title of the ok button on component"/>
+    <aura:attribute type="String" name="cancelTitle" access="public" description="Title of the cancel button on component"/>
+
+    <aura:registerEvent name="modalButtonPress" type="c:modalButtonPress"/>
+
+    <span class="{!v.showModal? '' : 'slds-hide'}">
+        <div role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <div class="slds-modal__header">
+                <!--<button class="slds-button slds-modal__close slds-button&#45;&#45;icon-inverse" title="Close">-->
+                <!--<lightning:icon class="slds-button__icon" size="x-small" iconName="utility:close"-->
+                <!--alternativeText="Close"/>-->
+                <!--<span class="slds-assistive-text">Close</span>-->
+                <!--</button>-->
+                <h2 id="header43" class="slds-text-heading--medium">
+                    <aura:text value="{!v.title}"/>
+                </h2>
+            </div>
+            <div class="slds-modal__content slds-p-around--medium">
+                    {!v.body}
+            </div>
+            <div class="slds-modal__footer">
+                <button class="slds-button slds-button--neutral" onclick="{!c.onCNCButtonClick}">
+                    <aura:text value="{!v.cancelTitle}"/>
+                </button>
+                <button class="slds-button slds-button--brand" onclick="{!c.onOKButtonClick}">
+                    <aura:text value="{!v.okTitle}"/>
+                </button>
+            </div>
+        </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+    </span>
+</aura:component>

@@ -1,0 +1,26 @@
+<!--
+ - Created by pavel on 15.04.2017.
+ -->
+
+<aura:component description="CardMenu">
+    <aura:attribute name="model" type="Object" access="public"/>
+    <aura:attribute name="isOpen" type="String" access="private" default="false"/>
+    <aura:registerEvent name="onCardEdit" type="c:boardCardEdit"/>
+
+    <div aura:id="dropdown" class="slds-dropdown-trigger slds-dropdown-trigger--click">
+        <button class="slds-button slds-not-selected" aria-live="assertive" onclick="{!c.toggleMenu}">
+            <span class="slds-text-not-selected">
+               <lightning:icon iconName="utility:settings" size="xx-small" alternativeText="Indicates approval"/>
+            </span>
+        </button>
+        <div class="slds-dropdown slds-dropdown--right">
+            <ul class="slds-dropdown__list" role="menu">
+                <li class="slds-dropdown__item" role="presentation">
+                    <a href="javascript:void(0);" onclick="{!c.editRecord}" role="menuitem" tabindex="0">
+                        <span class="slds-truncate">Edit <aura:text value="{!v.model.type}"/> </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</aura:component>

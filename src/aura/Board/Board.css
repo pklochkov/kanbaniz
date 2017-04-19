@@ -1,0 +1,11 @@
+/**
+ * Created by pavel on 02.04.2017.
+ */
+.THIS {
+
+}
+
+.THIS.board{
+    min-height:500px;
+    overflow-x:auto;
+}

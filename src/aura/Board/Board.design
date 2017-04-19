@@ -1,0 +1,14 @@
+<!--
+ - Created by pavel on 14.04.2017.
+ -->
+
+<design:component label="Properties">
+    <design:attribute name="sObjectName" label="Object Name" description="Related object to show in Kanban"
+                      default="Task"/>
+    <design:attribute label="Column Fields" description="Column Fields" name="cardFields"/>
+    <design:attribute name="relationField" label="Relation Field Name" description="Filter field" default="WhoId"/>
+    <design:attribute name="columnField" label="Column Field" description="Related object to show in Kanban"
+                      default="Status"/>
+    <!--<design:attribute type="String" name="groupingField" label="groupingField" description="Related object to show in Kanban" access="global"/>-->
+
+</design:component>

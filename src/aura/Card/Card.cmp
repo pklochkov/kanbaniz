@@ -1,0 +1,54 @@
+<!--
+ - Created by pavel on 02.04.2017.
+ -->
+
+<aura:component description="Card" access="global">
+    <aura:attribute name="model" type="Object" access="public"/>
+    <aura:attribute name="values" type="Object[]" access="public"/>
+    <aura:handler name="init" action="c.doInit" value="{!this}"/>
+    <article class="slds-card slds-card--narrow" draggable="true" ondragstart="{!c.onDragStart}">
+        <div class="slds-card__header slds-grid lowpadded">
+            <header class="slds-media slds-media--center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size--3-of-12">
+                            <lightning:icon iconName="standard:task"
+                                            alternativeText="Indicates approval"/>
+                        </div>
+                        <div class="slds-col slds-size--8-of-12">
+                            <span><aura:text value="{!v.model.name}"/></span>
+                        </div>
+                        <div class="slds-col slds-size--1-of-12">
+                            <c:CardMenu model="{!v.model}"/>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="slds-card__body lowpadded">
+            <div class="slds-tile__detail slds-text-body--small">
+                <dl class="slds-list--horizontal slds-wrap">
+                    <aura:iteration items="{!v.model.values}" var="item">
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="text-input-01">
+                                <aura:text value="{!item.label}"/>
+                                :</label>
+                            <aura:if isTrue="{!item.value.fieldType == 'REFERENCE'}">
+                                <div class="slds-form-element__control">
+                                    <span><c:LookupLink value="{!item.value}"/></span>
+                                </div>
+                            </aura:if>
+                            <aura:if isTrue="{!item.value.fieldType != 'REFERENCE'}">
+                                <div class="slds-form-element__control">
+                                    <span><aura:text value="{!item.value.displayValue}"/></span>
+                                </div>
+                            </aura:if>
+                        </div>
+                    </aura:iteration>
+                </dl>
+            </div>
+
+        </div>
+        <!--<div class="slds-card__footer">{!v.model.status}</div>-->
+    </article>
+</aura:component>

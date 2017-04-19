@@ -1,0 +1,12 @@
+<!--
+ - Created by pavel on 17.04.2017.
+ -->
+
+<aura:component description="DynamicRecordEdit">
+    <aura:attribute type="String" name="recordId"/>
+    <aura:method name="setRecordId" access="public" action="c.setRecord">
+        <aura:attribute name="recordId" type="String" required="true"/>
+    </aura:method>
+    <aura:method name="saveRecord" access="public" action="c.saveRecord"/>
+    {!v.body}
+</aura:component>
