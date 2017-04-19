@@ -1,6 +1,20 @@
 # kanbaniz
-Salesforce Lighting Component to display records as Kanban board.
+
+# Description
+
+Salesforce Lighting Components to display records as Kanban board.
+
+# Features
+
 Implemented:
-  Group records as Kanban board cards based on picklist field;
-  Edit records and reflect it on Kanban board;
-  Update record status;
+ - Group records as Kanban board cards based on picklist field;
+ - Edit records with force:recordEdit and reflect changes on Kanban board;
+ - Update record status;
+ - Configurable set of the fields to display in a Card
+
+In Progress:
+ - Unit Tests
+ - Documentation
+ - Error handling
+ - Loading spinners
+ - Group records by lookup field
